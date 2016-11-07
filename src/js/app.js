@@ -1,36 +1,12 @@
-// add todo
 
-//var todos = [];
-//
-//function addTodo(item){
-//    todos.push(item);
-//    displayTodos();
-//}
-//
-//// display todo items
-//
-//function displayTodos(){
-//console.log(todos);
-//}
-//
-//// change todo
-//
-//function changeTodo(position,value){
-//   todos[position]= value;
-//    displayTodos();
-//}
-//
-//// delete todo
-//
-//function deleteTodo(position){
-//    todos.splice(position,1);
-//    displayTodos();
-//}
+
+
 
 var todoList = {
     todos:[],
     displayTodos:function (){
         console.log(this.todos);
+        //alert(this.todos);
         for(var i=0; i < this.todos.length; i++){
             this.todos[i];
         }
@@ -55,7 +31,8 @@ var viewtodoList ={
     displayTodos: function(){
         var todosUl = document.querySelector('ul');
         todosUl.innerHTML='';
-        for(var i=0; i > todoList.todos.length; i++){
+        console.log(todosUl);
+        for(var i=0; i < todoList.todos.length; i++){
             var todoLi = document.createElement('li');
             todoLi.textContent = todoList.todos[i];
             todosUl.appendChild(todoLi);
@@ -64,3 +41,14 @@ var viewtodoList ={
 
     }
 }
+
+document.querySelector('.new-todo').addEventListener('keypress', function (e) {
+    var todoText =  document.getElementById('txt-addtodo').value;
+
+    var key = e.which || e.keyCode;
+    if (key === 13) { // 13 is enter
+      todoList.addTodo(todoText);
+        viewtodoList.displayTodos();
+    }
+});
+
