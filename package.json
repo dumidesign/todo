@@ -1,8 +1,18 @@
 {
   "name": "todo_project",
   "version": "1.0.0",
-  "description": "todo project js class",
-  "main": "index.html",
+  "description": "My doto Project",
+  "main": "index.js",
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,14 +20,14 @@
     "type": "git",
     "url": "git+https://github.com/dumidesign/todo.git"
   },
+  "keywords": [
+    "todo",
+    "todoapp"
+  ],
   "author": "Duminda Wijerathna",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/dumidesign/todo/issues"
   },
-  "homepage": "https://github.com/dumidesign/todo#readme",
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-sass": "^2.3.2"
-  }
+  "homepage": "https://github.com/dumidesign/todo#readme"
 }

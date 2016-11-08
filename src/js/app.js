@@ -14,12 +14,12 @@ var todoList = {
         this.todos.push(todo);
         this.displayTodos();
     },
-    // TODO not completed this part
+    // TODO not completed
     changeTodo:function(position,value){
         this.todos[position]= value;
         this.displayTodos();
     },
-    // TODO not completed this part
+    // TODO not completed
     deleteTodo:function(position){
         this.todos.splice(position,1);
             this.displayTodos();
@@ -32,14 +32,25 @@ var viewtodoList ={
     displayTodos: function(){
         var todosUl = document.querySelector('ul');
         todosUl.innerHTML='';
-        console.log(todosUl);
+        //console.log(todosUl);
         for(var i=0; i < todoList.todos.length; i++){
+
+            // need to move this to fucntion
             var todoLi = document.createElement('li');
-            var radioBox = document.createElement('input');
-            var labelTxt = document.createElement('label');
-            radioBox.type ='radio';
+            //var radioBox = document.createElement('input');
+            var deleteBtn = document.createElement('button');
+            var itemPosition = todoList.todos.indexOf(todoList.todos[i]);
+            deleteBtn.textContent ='x';
+            deleteBtn.id = itemPosition;
+            deleteBtn.className = 'deleteBtn';
+
+            console.log(itemPosition);
+            //radioBox.type ='radio';
+            //radioBox.id = todoList.todos[i];
             todoLi.textContent = todoList.todos[i];
-            todoLi.appendChild(radioBox,labelTxt);
+
+            //todoLi.appendChild(radioBox);
+            todoLi.appendChild(deleteBtn);
             todosUl.appendChild(todoLi);
 
         }
@@ -55,4 +66,8 @@ document.querySelector('.new-todo').addEventListener('keypress', function (ev) {
         viewtodoList.displayTodos();
     }
 });
+
+//document.querySelector('.deleteBtn').addEventListener('click',function(){
+//    var todoText =  document.getElementById(todoList.todos[i]).value;
+//})
 
