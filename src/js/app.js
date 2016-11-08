@@ -37,7 +37,8 @@ var viewtodoList ={
 
             // need to move this to fucntion
             var todoLi = document.createElement('li');
-            //var radioBox = document.createElement('input');
+            var radioBox = document.createElement('input');
+
             var deleteBtn = document.createElement('button');
             var itemPosition = todoList.todos.indexOf(todoList.todos[i]);
             deleteBtn.textContent ='x';
@@ -60,14 +61,18 @@ var viewtodoList ={
 
 document.querySelector('.new-todo').addEventListener('keypress', function (ev) {
     var todoText =  document.getElementById('txt-addtodo').value;
+   // var todoText2 =  document.getElementById(todoList.todos[i]).value;
+    console.log(itemPosition);
     var key = ev.which || ev.keyCode;
     if (key === 13) { // 13 is enter
       todoList.addTodo(todoText);
         viewtodoList.displayTodos();
+
     }
 });
 
 //document.querySelector('.deleteBtn').addEventListener('click',function(){
-//    var todoText =  document.getElementById(todoList.todos[i]).value;
+//
+//    console.log(todoText);
 //})
 
