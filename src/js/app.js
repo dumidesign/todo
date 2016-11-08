@@ -62,7 +62,7 @@ var viewtodoList ={
 document.querySelector('.new-todo').addEventListener('keypress', function (ev) {
     var todoText =  document.getElementById('txt-addtodo').value;
    // var todoText2 =  document.getElementById(todoList.todos[i]).value;
-    console.log(itemPosition);
+   // console.log(itemPosition);
     var key = ev.which || ev.keyCode;
     if (key === 13) { // 13 is enter
       todoList.addTodo(todoText);

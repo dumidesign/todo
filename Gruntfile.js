@@ -12,7 +12,7 @@ module.exports = function (grunt) {
             dev: {
                 files: {
                     // destination         // source file
-                    "app/css/styles.css" : "src/scss/styles.scss"
+                    "src/css/styles.css" : "src/scss/styles.scss"
                 }
             }
         },

@@ -1,6 +1,45 @@
 @import "partials/forms";
 
 .todo-wrap{
-  background: url("../images/bg.png") repeat-y;
+  background: url("../images/bg.png")center top no-repeat;
+  //min-height: 500px;
+  margin: 0 auto;
+  width: 375px;
+  text-align: center;
+  padding: 60px 20px 20px 20px;
+  box-sizing: border-box;
+  background-color: #fefe86;
 
+  h1{
+    opacity: 0.8;
+    color: #444444;
+  }
+  input{
+    &.new-todo{
+      border: 1px solid #444444;
+      height: 35px;
+      padding: 5px;
+      font-size: 20px;
+    }
+  }
+  ul{
+    position: relative;
+    li{
+      list-style: none;
+      text-align: left;
+      font-size: 18px;
+      height: 30px;
+      border-bottom: 1px solid #cccccc;
+      padding: 5px 0px;
+      opacity: 0.8;
+      color: #444444;
+      button{
+        float: right;
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+      }
+    }
+  }
 }
+
