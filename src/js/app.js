@@ -3,7 +3,7 @@
 var todoList = {
     todos:[],
     displayTodos:function (){
-        console.log(this.todos);
+        //console.log(this.todos);
         //alert(this.todos);
         for(var i=0; i < this.todos.length; i++){
             this.todos[i];
@@ -22,7 +22,7 @@ var todoList = {
     // TODO not completed
     deleteTodo:function(position){
         this.todos.splice(position,1);
-            this.displayTodos();
+        this.displayTodos();
 
     }
 
@@ -44,14 +44,23 @@ var viewtodoList ={
             deleteBtn.textContent ='x';
             deleteBtn.id = itemPosition;
             deleteBtn.className = 'deleteBtn';
+           // deleteBtn.onclick = alert("dfdfd");
 
-            console.log(itemPosition);
+            // put the array postion to hidden field
+            //var hiddenBox = document.createElement('input');
+            //hiddenBox.type = 'hidden';
+            //hiddenBox.name = 'hid_id'+ itemPosition;
+            //hiddenBox.id = 'hid_id'+ itemPosition;
+            //hiddenBox.value = itemPosition;
+            //console.log(itemPosition);
             //radioBox.type ='radio';
             //radioBox.id = todoList.todos[i];
             todoLi.textContent = todoList.todos[i];
+            todoLi.id = itemPosition;
 
             //todoLi.appendChild(radioBox);
             todoLi.appendChild(deleteBtn);
+            //todoLi.appendChild(hiddenBox);
             todosUl.appendChild(todoLi);
 
         }
@@ -72,7 +81,15 @@ document.querySelector('.new-todo').addEventListener('keypress', function (ev) {
 });
 
 //document.querySelector('.deleteBtn').addEventListener('click',function(){
-//
-//    console.log(todoText);
-//})
 
+document.querySelector('ul').addEventListener('click',function(ev){
+    var btnId =  ev.toElement.id
+    //console.log(btnId);
+    //console.log(ev);
+    todoList.deleteTodo(btnId)
+    viewtodoList.displayTodos();
+})
+
+//document.getElementById('hid_id1').addEventListener('click',function(){
+//    console.log('ddddd');
+//})
